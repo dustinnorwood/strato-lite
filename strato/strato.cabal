@@ -1,0 +1,312 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.38.1.
+--
+-- see: https://github.com/sol/hpack
+
+name:           strato
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/strato#readme>
+homepage:       https://github.com/githubuser/strato#readme
+bug-reports:    https://github.com/githubuser/strato/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2024 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/strato
+
+library
+  exposed-modules:
+      Backend.BitcoinRPC
+      Backend.Handlers
+      Backend.Server
+      Bitcoin.TxBuilder
+      Common.API
+      Common.BridgeClient
+      Common.Client
+      Common.Encoder
+      Common.Route
+      Common.Types
+      Frontend.Components.Accordion
+      Frontend.Components.Badge
+      Frontend.Components.BarGraph
+      Frontend.Components.Button
+      Frontend.Components.Card
+      Frontend.Components.Col
+      Frontend.Components.CopyButton
+      Frontend.Components.EllipsizeText
+      Frontend.Components.HexText
+      Frontend.Components.Input
+      Frontend.Components.Link
+      Frontend.Components.NodeCard
+      Frontend.Components.NumberCard
+      Frontend.Components.PeersCard
+      Frontend.Components.PieChart
+      Frontend.Components.Popover
+      Frontend.Components.Progress
+      Frontend.Components.Row
+      Frontend.Components.Select
+      Frontend.Components.Spinner
+      Frontend.Components.StatCard
+      Frontend.Components.SVG
+      Frontend.Components.SVG.Activity
+      Frontend.Components.SVG.ArrowDown
+      Frontend.Components.SVG.ArrowLeft
+      Frontend.Components.SVG.ArrowRight
+      Frontend.Components.SVG.ArrowRightLeft
+      Frontend.Components.SVG.ArrowUpRight
+      Frontend.Components.SVG.Banknote
+      Frontend.Components.SVG.BitcoinLogo
+      Frontend.Components.SVG.Book
+      Frontend.Components.SVG.ChevronDown
+      Frontend.Components.SVG.ChevronLeft
+      Frontend.Components.SVG.ChevronRight
+      Frontend.Components.SVG.ChevronUp
+      Frontend.Components.SVG.Coins
+      Frontend.Components.SVG.Copy
+      Frontend.Components.SVG.CopyCheck
+      Frontend.Components.SVG.Database
+      Frontend.Components.SVG.Droplets
+      Frontend.Components.SVG.History
+      Frontend.Components.SVG.LayoutDashboard
+      Frontend.Components.SVG.Loader2
+      Frontend.Components.SVG.Logout
+      Frontend.Components.SVG.Menu
+      Frontend.Components.SVG.Plus
+      Frontend.Components.SVG.Send
+      Frontend.Components.SVG.Settings
+      Frontend.Components.SVG.Shield
+      Frontend.Components.SVG.TrendingUp
+      Frontend.Components.SVG.Vote
+      Frontend.Components.SVG.Wallet
+      Frontend.Components.Table
+      Frontend.Components.Tabs
+      Frontend.Components.TerminalWidget
+      Frontend.Components.TransactionList
+      Frontend.Components.ValidatorsCard
+      Frontend.Pages.App.ActivityFeed
+      Frontend.Pages.App.Admin
+      Frontend.Pages.App.Borrow
+      Frontend.Pages.App.Deposits
+      Frontend.Pages.App.Deposits.CDPBorrowWidget
+      Frontend.Pages.App.Deposits.ExchangeCart
+      Frontend.Pages.App.Header
+      Frontend.Pages.App.Home
+      Frontend.Pages.App.Navbar
+      Frontend.Pages.App.Overview
+      Frontend.Pages.App.Overview.AssetsList
+      Frontend.Pages.App.Overview.AssetSummary
+      Frontend.Pages.App.Overview.BorrowingSection
+      Frontend.Pages.App.Overview.FAQ
+      Frontend.Pages.App.Overview.MyPoolParticipationSection
+      Frontend.Pages.App.Overview.RiskLevelProgress
+      Frontend.Pages.App.Pools
+      Frontend.Pages.App.Sidebar
+      Frontend.Pages.App.Swap
+      Frontend.Pages.App.Transfer
+      Frontend.Pages.BitcoinBridge.Bridge
+      Frontend.Pages.BitcoinBridge.Overview
+      Frontend.Pages.BitcoinBridge.RPCPanel
+      Frontend.Pages.SMD.Blocks
+      Frontend.Pages.SMD.Contracts
+      Frontend.Pages.SMD.Dashboard
+      Frontend.Pages.SMD.Users
+      Frontend.Tabs
+      Frontend.Types.State
+      Frontend.Utils
+      Strato.App
+      Strato.Options
+      Strato.Run
+  other-modules:
+      Paths_strato
+  hs-source-dirs:
+      src
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , base16-bytestring
+    , binary
+    , bloc2
+    , bloc2api
+    , bloc2client
+    , blockstanbul
+    , bytestring
+    , cache
+    , clock
+    , common-log
+    , containers
+    , core-api2
+    , cryptonite
+    , data-default
+    , ethereum-discovery
+    , ethereum-encryption
+    , evm-solidity
+    , file-embed
+    , filepath
+    , haskoin-core
+    , hflags
+    , http-client
+    , jsaddle
+    , jsaddle-dom
+    , jsaddle-warp
+    , lens
+    , memory
+    , reflex
+    , reflex-dom
+    , reflex-dom-core
+    , resourcet
+    , scientific
+    , servant
+    , servant-client
+    , servant-server
+    , servant-websockets
+    , strato-lite
+    , strato-model
+    , strato-p2p
+    , text
+    , time
+    , unix
+    , unliftio
+    , vm-tools
+    , wai
+    , wai-cors
+    , wai-extra
+    , wai-middleware-static
+    , warp
+    , websockets
+    , wreq
+  default-language: Haskell2010
+
+executable strato
+  main-is: Main.hs
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N8
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , base16-bytestring
+    , binary
+    , bloc2
+    , bloc2api
+    , bloc2client
+    , blockstanbul
+    , bytestring
+    , cache
+    , clock
+    , common-log
+    , containers
+    , core-api2
+    , cryptonite
+    , data-default
+    , ethereum-discovery
+    , ethereum-encryption
+    , evm-solidity
+    , file-embed
+    , filepath
+    , haskoin-core
+    , hflags
+    , http-client
+    , http-types
+    , jsaddle
+    , jsaddle-dom
+    , jsaddle-warp
+    , lens
+    , memory
+    , reflex
+    , reflex-dom
+    , reflex-dom-core
+    , resourcet
+    , scientific
+    , servant
+    , servant-client
+    , servant-server
+    , servant-websockets
+    , strato
+    , strato-lite
+    , strato-model
+    , strato-p2p
+    , text
+    , unliftio
+    , vm-tools
+    , wai
+    , wai-cors
+    , wai-extra
+    , wai-middleware-static
+    , warp
+    , websockets
+    , wreq
+  default-language: Haskell2010
+  if os(linux)
+    build-depends:
+        jsaddle-webkit2gtk
+  else
+    build-depends:
+        jsaddle-wkwebview
+
+test-suite strato-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_strato
+  hs-source-dirs:
+      test
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , base16-bytestring
+    , binary
+    , bloc2
+    , bloc2api
+    , bloc2client
+    , blockstanbul
+    , bytestring
+    , cache
+    , clock
+    , common-log
+    , containers
+    , core-api2
+    , cryptonite
+    , data-default
+    , ethereum-discovery
+    , ethereum-encryption
+    , evm-solidity
+    , file-embed
+    , filepath
+    , haskoin-core
+    , hflags
+    , http-client
+    , jsaddle
+    , jsaddle-dom
+    , jsaddle-warp
+    , lens
+    , memory
+    , reflex
+    , reflex-dom
+    , reflex-dom-core
+    , resourcet
+    , scientific
+    , servant
+    , servant-client
+    , servant-server
+    , servant-websockets
+    , strato
+    , strato-lite
+    , strato-model
+    , strato-p2p
+    , text
+    , unliftio
+    , vm-tools
+    , wai
+    , wai-cors
+    , wai-extra
+    , wai-middleware-static
+    , warp
+    , websockets
+    , wreq
+  default-language: Haskell2010

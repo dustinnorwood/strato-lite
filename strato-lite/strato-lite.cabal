@@ -1,0 +1,184 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.38.1.
+--
+-- see: https://github.com/sol/hpack
+
+name:           strato-lite
+version:        0.0.1
+synopsis:       An API and server used for simulating a STRATO network
+description:    An API and server used for simulating a STRATO network
+category:       Debuggers
+author:         Dustin Norwood
+maintainer:     dustin@blockapps.net
+build-type:     Simple
+
+library
+  exposed-modules:
+      Strato.Lite
+      Strato.Lite.Base
+      Strato.Lite.Base.Filesystem
+      Strato.Lite.Base.Memory
+      Strato.Lite.Base.Simulator
+      Strato.Lite.Base.Utils
+      Strato.Lite.Cirrus
+      Strato.Lite.Core
+      Strato.Lite.Filesystem
+      Strato.Lite.Init
+      Strato.Lite.Memory
+      Strato.Lite.Options
+      Strato.Lite.PEM
+      Strato.Lite.Rest
+      Strato.Lite.Rest.Api
+      Strato.Lite.Rest.Server
+      Strato.Lite.Simulator
+      Strato.Lite.Utils
+  other-modules:
+      Paths_strato_lite
+  hs-source-dirs:
+      src/
+  ghc-options: -Wall -O2
+  build-depends:
+      Ranged-sets
+    , aeson
+    , asn1-encoding
+    , asn1-types
+    , base
+    , base16-bytestring
+    , binary
+    , bloc2
+    , bloc2api
+    , blockDB
+    , blockapps-data
+    , blockapps-datadefs
+    , blockapps-mpdbs
+    , blockstanbul
+    , bytestring
+    , cache
+    , clock
+    , common-log
+    , composable-monads-base
+    , conduit
+    , conduit-extra
+    , containers
+    , core-api2
+    , crypto-pubkey-types
+    , data-default
+    , debugger
+    , directory
+    , ethereum-discovery
+    , ethereum-encryption
+    , ethereum-rlp
+    , evm-solidity
+    , exceptions
+    , extra
+    , filepath
+    , format
+    , hflags
+    , lens
+    , leveldb-haskell
+    , merkle-patricia-db
+    , monad-alter
+    , monad-logger
+    , monadIO
+    , mtl
+    , network
+    , nibblestring
+    , ordered-containers
+    , pem
+    , persistent
+    , persistent-sqlite
+    , prometheus-client
+    , resource-pool
+    , resourcet
+    , seqevents
+    , servant-client
+    , servant-server
+    , slipstream
+    , solid-vm-compiler
+    , solid-vm-model
+    , sqlite-simple
+    , stm-chans
+    , stm-conduit
+    , strato-genesis
+    , strato-index
+    , strato-init
+    , strato-model
+    , strato-networks
+    , strato-p2p
+    , strato-sequencer
+    , strato-statediff
+    , text
+    , time
+    , transformers
+    , unliftio
+    , vault-monad
+    , vector
+    , vm-runner
+    , vm-tools
+    , warp
+  default-language: Haskell2010
+
+executable strato-lite
+  main-is: Main.hs
+  other-modules:
+      Paths_strato_lite
+  hs-source-dirs:
+      exec_src/
+  ghc-options: -Wall -Werror
+  build-depends:
+      aeson
+    , base
+    , bytestring
+    , hflags
+    , strato-lite
+    , strato-model
+    , strato-networks
+    , strato-p2p
+    , vm-tools
+  default-language: Haskell2010
+
+test-suite simulator-spec
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  other-modules:
+      SimulatorSpec
+      Spec
+      Paths_strato_lite
+  hs-source-dirs:
+      tests/
+  ghc-options: -Wall -Werror -dynamic
+  build-depends:
+      QuickCheck
+    , base
+    , blockDB
+    , blockapps-data
+    , blockapps-datadefs
+    , blockapps-mpdbs
+    , blockstanbul
+    , bytestring
+    , common-log
+    , conduit
+    , containers
+    , ethereum-encryption
+    , hflags
+    , hspec
+    , ki-unlifted
+    , labeled-error
+    , lens
+    , monad-alter
+    , mtl
+    , raw-strings-qq
+    , seqevents
+    , solid-vm-model
+    , stm-chans
+    , stm-conduit
+    , strato-lite
+    , strato-model
+    , strato-networks
+    , strato-p2p
+    , strato-sequencer
+    , text
+    , unliftio
+    , vm-tools
+  default-language: Haskell2010
